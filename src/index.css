@@ -1,13 +1,182 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.home-content {
+  background: #fff;
+}
+
+.search {
+  width: 100%;  
+  padding: 1rem 0;
+  text-align: center;
+  
+}
+
+.search input {
+  padding: 0 1.5rem;
+  width: 60%;
+  height: 35px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 7px #ccc;
+}
+
+.home-content-body {
+  width: 80%;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.book-list {  
+  width: 100%;
+  background: #fff;
+}
+
+.book-list img {
+  width: 250px;
+  height: auto;
+}
+
+.book-list .book-short-info .book:nth-child(odd) {
+  background: #f3f2fa;
+}
+
+.book-list .book-short-info .book:nth-child(even) {
+  background: #faf8ff;
+}
+
+.book-list .book-short-info .book td:nth-child(1) {
+  padding: 1.5rem;
+  width: 30%;
+  text-align: center;
+}
+
+.book-list .book-short-info .book td:nth-child(2) {
+  width: 70%;
+  padding: 3rem;
+}
+
+.link {
+  --offset: 10px;
+  --border-size: 2px;
+  display: block;
+  position: relative;
+  padding: .5rem;
+  margin-top: 3rem;
+  width: 160px;
+  text-align: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  background: transparent;
+  color: #24568f;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  outline: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+  transition: background 0.8s ease;
+}
+.link:hover {
+  background: rgba(100, 0, 0, 0.03);
+}
+.link__horizontal, .link__vertical {
+  position: absolute;
+  top: var(--horizontal-offset, 0);
+  right: var(--vertical-offset, 0);
+  bottom: var(--horizontal-offset, 0);
+  left: var(--vertical-offset, 0);
+  transition: transform 0.8s ease;
+  will-change: transform;
+}
+.link__horizontal::before, .link__vertical::before {
+  content: "";
+  position: absolute;
+  border: inherit;
+}
+.link__horizontal {
+  --vertical-offset: calc(var(--offset) * -1);
+  border-top: var(--border-size) solid currentcolor;
+  border-bottom: var(--border-size) solid currentcolor;
+}
+.link__horizontal::before {
+  top: calc(var(--vertical-offset) - var(--border-size));
+  bottom: calc(var(--vertical-offset) - var(--border-size));
+  left: calc(var(--vertical-offset) * -1);
+  right: calc(var(--vertical-offset) * -1);
+}
+.link:hover .link__horizontal {
+  transform: scaleX(0);
+}
+.link__vertical {
+  --horizontal-offset: calc(var(--offset) * -1);
+  border-left: var(--border-size) solid currentcolor;
+  border-right: var(--border-size) solid currentcolor;
+}
+.link__vertical::before {
+  top: calc(var(--horizontal-offset) * -1);
+  bottom: calc(var(--horizontal-offset) * -1);
+  left: calc(var(--horizontal-offset) - var(--border-size));
+  right: calc(var(--horizontal-offset) - var(--border-size));
+}
+.link:hover .link__vertical {
+  transform: scaleY(0);
+}
+
+nav {
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+nav div span {
+  padding: .1rem;
+  color: #24568f;
+}
+
+nav div span a {
+  text-decoration: none;
+  display: inline-block;
+  padding: .5rem 1rem;
+  background: #fff;
+  color: #24568f;
+}
+
+nav div span a:hover {
+  background: rgba(36, 86, 143, .3);
+}
+
+/* Book Details Page */
+
+.book-details-content {
+  width: 80%;
+  max-width: 80%;
+  margin: 0 auto
+}
+
+.books-details-left {
+  max-width: 30%;
+}
+
+.books-details-right {
+  max-width: 70%;
+}
+
+.books-details-left, .books-details-right {
+  float: left;
+}
+
+.book-details-content .books-details-left img {
+  max-width: 100%;
+}
+
+.book-details-content .books-details-right .text-content {
+  padding: 0 3rem 3rem;
 }
