@@ -13,7 +13,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 It will be opened on home page.
 On the top of home page there is a search box where you can type key word and app will search through fetched data and list all the matches on home page.
-First five results will be shown, and on the bottom there is navigation to navigate between rest of a search results.
+First ten results will be shown, and on the bottom there is navigation to navigate between rest of a search results.
 When you click on 'read more' button book details will appear.
 
 
